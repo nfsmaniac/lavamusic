@@ -3,7 +3,7 @@ const moment = require("moment");
 
 module.exports = class Logger {
 	static log (content, type = "log") {
-		const date = `${moment().format("DD-MM-YYYY hh:mm:ss")}`;
+		const date = `${moment().format("YYYY-MM-DD HH:mm:ss")}`;
 		switch (type) {
 	
 		case "log": {
