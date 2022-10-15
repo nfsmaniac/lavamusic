@@ -133,6 +133,8 @@ module.exports = async (client, player, track, payload) => {
         }, 10000);
       });
     } else if (i.customId === "stop") {
+      row.components[2].setEmoji({name: "▶️"});
+      m.edit({components: [row]});
       if (!player) {
         return collector.stop();
       }
@@ -158,6 +160,11 @@ module.exports = async (client, player, track, payload) => {
         return collector.stop();
       }
       player.pause(!player.paused);
+
+      // But3 = play/pause
+      row.components[2].setEmoji({name: player?.paused ? "▶️" : "⏸️"});
+      m.edit({components: [row]});
+
       const Text = player.paused
         ? `${emojipause} **Paused**`
         : `${emojiresume} **Resume**`;
@@ -200,6 +207,8 @@ module.exports = async (client, player, track, payload) => {
         }, 10000);
       });
       if (player.queue.length === 1) {
+        row.components[2].setEmoji({name: "▶️"});
+        m.edit({components: [row]});
         return collector.stop();
       }
     } else if (i.customId === "vup") {
