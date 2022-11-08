@@ -63,17 +63,17 @@ A Tutorial has been uploaded on YouTube, Watch it by clicking [here](https://you
 <br />
 <p align="center">
   <a href="https://github.com/brblacky/lavamusic">
-    <img src="https://media.discordapp.net/attachments/876035356460462090/912404827118641202/Screenshot_20211122-234019__01.jpg">
-    <img src="https://media.discordapp.net/attachments/876035356460462090/910856250084970518/Screenshot_20211118-170634__01.jpg">
-    <img src="https://media.discordapp.net/attachments/876035356460462090/910855739969527849/Screenshot_20211118-170456__01.jpg">
-    <img src="https://media.discordapp.net/attachments/876035356460462090/911442921738350622/Screenshot_20211120-075640__01.jpg">
+    <img src="https://user-images.githubusercontent.com/50886682/196234856-1c80302f-eb5c-4687-9b1d-1e6d365fde3f.png">
+    <img src="https://user-images.githubusercontent.com/50886682/196235575-27d0c2b2-cbe0-462b-b2b9-e04df329a4dc.png">
+    <img src="https://user-images.githubusercontent.com/50886682/196235487-9b1cb8b6-9c1d-4a8e-b000-5d1435fcd6eb.png">
+    <img src="https://user-images.githubusercontent.com/50886682/196235372-1844f0ce-3f86-45b9-9931-b225a53f3c80.png">
 
   </a>
 </p>
 
 ## 📎 Requirements
 
-- [Nodejs](https://nodejs.org/en/) v16.17 or higher
+- [Nodejs](https://nodejs.org/en/) v18 and more
 - [Discord.js](https://github.com/discordjs/discord.js/) v14
 - [Java](https://adoptopenjdk.net/) for lavalink
 - [Lavalink](https://ci.fredboat.com/repository/download/Lavalink_Build/.lastSuccessful/Lavalink.jar?guest=1&branch=refs/heads/dev)
@@ -116,7 +116,7 @@ Edit the Docker-Compose file and make sure to edit the following variables:
 ```yaml
 TOKEN: "put your bot token"
 PREFIX: "your bot prefix"
-OWNERID: "your discord id"
+OWNER_ID: "your discord id"
 ```
 
 For more information how to fill all the varialabes go to this page.
@@ -177,7 +177,7 @@ When you are running the Code you must have gotten this Error. To fix this head 
 
 <p align="center">
   <a href="https://github.com/brblacky/lavamusic">
-    <img src="https://media.discordapp.net/attachments/848492641585725450/894115221701001216/unknown.png">
+    <img src="https://user-images.githubusercontent.com/50886682/196232974-d9cfc18c-92c5-43bd-b1bc-ff1cae3df701.png">
 
   </a>
 </p>
@@ -190,11 +190,16 @@ Then turn on both of those Settings and click "Save Changes". Then you are done 
 
 ```js
     token: process.env.TOKEN || "",  // your bot token
+    clientID: process.env.CLIENT_ID || "", // your bot client id
     prefix: process.env.PREFIX || "!", // bot prefix
-    ownerID: process.env.OWNERID || "491577179495333903", //your discord id
-    mongourl: process.env.MONGO_URI || "", // MongoDb URL
-    embedColor: process.env.COlOR || "#303236", // embed colour
-    logs: process.env.LOGS || "", // channel id for guild create and delete logs
+    ownerID: process.env.OWNER_ID || "", //your discord id
+    SpotifyID: process.env.SPOTIFY_ID || "",
+    SpotifySecret: process.env.SPOTIFY_SECRET || "",
+    mongourl: process.env.MONGO_URL || "", // MongoDb URL
+    embedColor: process.env.EMBED_COLOR || 0x303236, // embed colour
+    logs: process.env.LOGS || "channel_id", // channel id for guild create and delete logs
+    errorLogsChannel: process.env.ERROR_LOGS_CHANNEL || "channel_id", //error logs channel id
+    SearchPlatform: process.env.SEARCH_PLATFORM || "youtube music", // Sets the Search Platform. Possibilities: youtube || youtube music || soundcloud
 ```
 
 ## 🌋 Lavalink
@@ -207,6 +212,9 @@ Then turn on both of those Settings and click "Save Changes". Then you are done 
       "secure": false
 ```
 
+- Create an application.yml file in your working directory and copy the [example](https://github.com/freyacodes/Lavalink/blob/master/LavalinkServer/application.yml.example) into the created file and edit it with your configuration.
+- Run the jar file by running `java -jar Lavalink.jar` in a Terminal window.
+
 ## ⚙️ SHARDS
 
 - edit in `sharder.js`
@@ -218,9 +226,6 @@ Then turn on both of those Settings and click "Save Changes". Then you are done 
   totalShards: 1,
   shardList: "auto",
 ```
-
-- Create an application.yml file in your working directory and copy the [example](https://github.com/freyacodes/Lavalink/blob/master/LavalinkServer/application.yml.example) into the created file and edit it with your configuration.
-- Run the jar file by running `java -jar Lavalink.jar` in a Terminal window.
 
 <!-- ABOUT THE PROJECT -->
 

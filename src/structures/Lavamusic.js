@@ -1,13 +1,14 @@
 const { Message, Client } = require("discord.js");
 const { Structure, Manager } = require("erela.js");
-const { nodes, SpotifyID, SpotifySecret } = require("../config");
+const { nodes, SpotifyID, SpotifySecret, SearchPlatform } = require("../config");
+const { Preprocess } = require("../utils/UriResolveHelper.js");
 const deezer = require("erela.js-deezer");
 const Spotify = require("erela.js-spotify");
 const apple = require("erela.js-apple");
 const facebook = require("erela.js-facebook");
-const fetch = require("node-fetch").default;
 const cheerio = require("cheerio");
 const { readdirSync } = require("fs");
+const { get } = require("node-superfetch");
 
 Structure.extend(
   "Player",
@@ -46,6 +47,11 @@ Structure.extend(
       }
       getRate() {
         return this.rate;
+      }
+
+      async search(query, requester) {
+        let q = await Preprocess(query);
+        return super.search(q, requester);
       }
 
       set8D(value) {
@@ -295,7 +301,7 @@ class Lavamusic extends Manager {
         new facebook(),
       ],
       autoPlay: true,
-      defaultSearchPlatform: "youtube music",
+      defaultSearchPlatform: SearchPlatform,
       send: async (id, payload) => await this._sendPayload(id, payload),
     });
 
@@ -308,9 +314,9 @@ class Lavamusic extends Manager {
      * @returns {string}
      */
     this.getMetaThumbnail = async (uri) => {
-      return await fetch(uri)
+      return await get(uri)
         .then(async (r) => {
-          const body = await r.text();
+          const body = await r.text;
           const $ = cheerio.load(body);
           return (
             $("meta[property='twitter:image']")?.attr("content") ??
