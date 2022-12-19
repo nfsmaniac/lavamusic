@@ -5,8 +5,10 @@ const Model = require("../../schema/247");
 const { _, _A_ } = require("simplin.js");
 
 module.exports = {
-  name: "247",
-  description: "Sets 24/7 mode, bot stays in voice channel 24/7.",
+  name: _("SLASH_247_NAME"),
+  name_localizations: _A_("SLASH_247_NAME"),
+  description: _("SLASH_247_DESC"),
+  description_localizations: _A_("SLASH_247_DESC"),
   default_member_permissions: ["ManageChannels"],
   player: true,
   dj: true,
@@ -31,7 +33,7 @@ module.exports = {
     if (player.twentyFourSeven) {
       player.twentyFourSeven = false;
       const embed = new EmbedBuilder()
-        .setDescription("24/7 mode is **disabled**.")
+        .setDescription(_("RESPONSE_247_DISABLED"))
         .setColor(client.embedColor);
       await interaction
         .editReply({ embeds: [embed] })
@@ -39,7 +41,7 @@ module.exports = {
     } else {
       player.twentyFourSeven = true;
       const embed = new EmbedBuilder()
-        .setDescription("24/7 mode is **enabled**.")
+        .setDescription(_("RESPONSE_247_ENABLED"))
         .setColor(client.embedColor);
       await interaction
         .editReply({ embeds: [embed] })

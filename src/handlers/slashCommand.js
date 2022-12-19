@@ -31,7 +31,9 @@ module.exports = (client) => {
 
       data.push({
         name: slashCommand.name,
+        name_localizations: slashCommand.name_localizations ? slashCommand.name_localizations : null,
         description: slashCommand.description,
+        description_localizations: slashCommand.description_localizations ? slashCommand.description_localizations : null,
         type: slashCommand.type,
         options: slashCommand.options ? slashCommand.options : null,
         default_member_permissions: slashCommand.default_member_permissions
