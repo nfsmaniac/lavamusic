@@ -1,4 +1,5 @@
-const { EmbedBuilder, CommandInteraction, Client, PermissionFlagsBits } = require("discord.js")
+const { EmbedBuilder, CommandInteraction, Client, PermissionFlagsBits } = require("discord.js");
+const { _ } = require("simplin.js");
 
 module.exports = {
   name: "join",

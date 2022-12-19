@@ -1,6 +1,7 @@
 const { EmbedBuilder, CommandInteraction } = require("discord.js");
 const MusicBot = require("../../structures/Client");
 const db = require("../../schema/dj");
+const { _ } = require("simplin.js");
 
 module.exports = {
   name: "removedj",

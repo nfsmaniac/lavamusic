@@ -2,6 +2,7 @@ const { EmbedBuilder, CommandInteraction, Client, ActionRowBuilder, ButtonBuilde
 const db = require("../../schema/playlist");
 const { convertTime } = require("../../utils/convert.js");
 const lodash = require("lodash");
+const { _ } = require("simplin.js");
 
 module.exports = {
     name: "info",

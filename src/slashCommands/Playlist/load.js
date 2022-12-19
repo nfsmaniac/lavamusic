@@ -1,5 +1,6 @@
 const { EmbedBuilder, CommandInteraction, Client, ApplicationCommandOptionType } = require("discord.js");
 const db = require("../../schema/playlist");
+const { _ } = require("simplin.js");
 
 module.exports = {
     name: "load",

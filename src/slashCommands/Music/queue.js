@@ -1,6 +1,7 @@
 const { Client, CommandInteraction, EmbedBuilder, ButtonBuilder, ActionRowBuilder, ApplicationCommandOptionType, ButtonStyle } = require("discord.js");
 const load = require("lodash");
 const { convertTime } = require('../../utils/convert.js');
+const { _ } = require("simplin.js");
 
 module.exports = {
     name: "queue",

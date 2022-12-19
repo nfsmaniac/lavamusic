@@ -1,6 +1,8 @@
 const { EmbedBuilder, CommandInteraction, Client, ActionRowBuilder, ButtonBuilder } = require("discord.js");
 const db = require("../../schema/playlist");
 const lodash = require("lodash");
+const { _ } = require("simplin.js");
+
 module.exports = {
     name: "list",
     description: "List your created playlists.",

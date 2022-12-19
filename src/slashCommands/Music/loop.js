@@ -1,4 +1,5 @@
 const { CommandInteraction, Client, ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
+const { _ } = require("simplin.js");
 
 module.exports = {
   name: "loop",

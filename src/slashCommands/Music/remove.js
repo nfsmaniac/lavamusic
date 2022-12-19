@@ -1,4 +1,5 @@
 const { CommandInteraction, Client, EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
+const { _ } = require("simplin.js");
 
 module.exports = {
   name: "remove",

@@ -2,6 +2,7 @@ const {
   version, EmbedBuilder
 } = require("discord.js");
 const moment = require("moment");
+const { _ } = require("simplin.js");
 require("moment-duration-format");
 const os = require("os");
 

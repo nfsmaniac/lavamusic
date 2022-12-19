@@ -1,4 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, CommandInteraction, ButtonStyle, Client } = require("discord.js");
+const { _ } = require("simplin.js");
 
 module.exports = {
     name: "help",
