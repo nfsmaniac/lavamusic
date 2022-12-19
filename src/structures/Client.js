@@ -6,6 +6,8 @@ const {
 } = require("discord.js");
 const mongoose = require("mongoose");
 const Lavamusic = require("./Lavamusic");
+const { StringProvider } = require("simplin.js");
+const path = require('path');
 
 class MusicBot extends Client {
   constructor() {
@@ -51,9 +53,12 @@ class MusicBot extends Client {
     this.aliases = new Collection();
     this.commands = new Collection();
     this.logger = require("../utils/logger.js");
-    this.emoji = require("../utils/emoji.json");
+    this.emoji = require("../resources/emoji.json");
     if (!this.token) this.token = this.config.token;
     this.manager = new Lavamusic(this);
+    this.locales = StringProvider
+                      .load(path.resolve(__dirname, "../resources/locales"))
+                      .setDefault(this.config.defaultLocale);
 
     this.rest.on("rateLimited", (info) => {
       this.logger.log(info, "log");

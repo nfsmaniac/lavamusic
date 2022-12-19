@@ -1,6 +1,6 @@
 {
   "name": "lavamusic",
-  "description": "Lavamusic a powerful music Discord bot that need in your server",
+  "description": "Lavamusic is a powerful Discord Music Bot you need in your server.",
   "repository": "https://github.com/brblacky/lavamusic",
   "logo": "https://media.discordapp.net/attachments/876035356460462090/888434725235097610/20210820_124325.png",
   "keywords": ["discord", "discordjs", "music"],
@@ -40,22 +40,26 @@
       "value": "!",
       "required": true
      },
-    "COlOR":{
+    "COLOR":{
       "description": "embed colour code hex",
       "value": "#303236",
       "required": false
      },
     "LOGS":{
-      "description": "Channel I'd",
+      "description": "Channel ID",
       "required": true
      },
     "OWNERID":{
-      "description": "your discord id",
+      "description": "Your Discord User ID",
       "required": false
      },
     "TOKEN": {
       "description": "Your bot's bot token.",
       "required": true
+    },
+    "LOCALE": {
+      "description": "Default bot's language, see src/resources/locales for list of supported locales",
+      "required": false
     }
   }
 }

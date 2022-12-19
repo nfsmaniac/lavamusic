@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 module.exports = {
+    defaultLocale: process.env.LOCALE || "en-US",   // preferred bot's language, see src/resources/locales for list of supported locales
     token: process.env.TOKEN || "",  // your bot token
     clientID: process.env.CLIENT_ID || "", // your bot client id
     prefix: process.env.PREFIX || "!", // bot prefix
