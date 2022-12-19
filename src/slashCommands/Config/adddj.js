@@ -6,7 +6,7 @@ const {
 } = require("discord.js");
 const MusicBot = require("../../structures/Client");
 const db = require("../../schema/dj");
-const { _ } = require("simplin.js");
+const { _, _A_ } = require("simplin.js");
 
 module.exports = {
   name: "adddj",

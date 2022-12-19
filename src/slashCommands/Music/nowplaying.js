@@ -1,7 +1,7 @@
 const { EmbedBuilder, CommandInteraction, Client } = require("discord.js");
 const { convertTime } = require('../../utils/convert.js');
 const { progressbar } = require('../../utils/progressbar.js');
-const { _ } = require("simplin.js");
+const { _, _A_ } = require("simplin.js");
 
 module.exports = {
     name: "nowplaying",

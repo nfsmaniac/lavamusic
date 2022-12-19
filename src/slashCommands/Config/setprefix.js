@@ -5,7 +5,7 @@ const {
 } = require("discord.js");
 const db = require("../../schema/prefix.js");
 const MusicBot = require("../../structures/Client.js");
-const { _ } = require("simplin.js");
+const { _, _A_ } = require("simplin.js");
 
 module.exports = {
   name: "setprefix",

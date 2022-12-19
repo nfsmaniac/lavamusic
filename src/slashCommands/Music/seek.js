@@ -1,7 +1,7 @@
 const { CommandInteraction, Client, EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
 const { convertTime, convertHmsToMs } = require('../../utils/convert.js');
 const ms = require('ms');
-const { _ } = require("simplin.js");
+const { _, _A_ } = require("simplin.js");
 
 module.exports = {
     name: "seek",

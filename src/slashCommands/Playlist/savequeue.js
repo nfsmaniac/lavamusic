@@ -1,6 +1,6 @@
 const { EmbedBuilder, CommandInteraction, Client, ApplicationCommandOptionType } = require("discord.js");
 const db = require("../../schema/playlist");
-const { _ } = require("simplin.js");
+const { _, _A_ } = require("simplin.js");
 
 module.exports = {
     name: "savequeue",

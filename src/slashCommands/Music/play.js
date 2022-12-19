@@ -5,7 +5,7 @@ const {
   ApplicationCommandOptionType,
 } = require("discord.js");
 const MusicBot = require("../../structures/Client");
-const { _ } = require("simplin.js");
+const { _, _A_ } = require("simplin.js");
 const { convertTime } = require("../../utils/convert.js");
 
 module.exports = {

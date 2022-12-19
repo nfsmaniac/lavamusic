@@ -1,6 +1,6 @@
 const { EmbedBuilder, CommandInteraction, Client, ButtonStyle, ButtonBuilder, ActionRowBuilder } = require("discord.js");
 const { convertTime } = require('../../utils/convert.js');
-const { _ } = require("simplin.js");
+const { _, _A_ } = require("simplin.js");
 
 module.exports = {
   name: "grab",

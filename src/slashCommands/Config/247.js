@@ -2,7 +2,7 @@ const { EmbedBuilder, CommandInteraction } = require("discord.js");
 const MusicBot = require("../../structures/Client");
 const { Player } = require("erela.js");
 const Model = require("../../schema/247");
-const { _ } = require("simplin.js");
+const { _, _A_ } = require("simplin.js");
 
 module.exports = {
   name: "247",
