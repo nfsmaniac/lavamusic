@@ -28,12 +28,9 @@ module.exports = (client) => {
         );
 
       client.slashCommands.set(slashCommand.name, slashCommand);
-
-      data.push({
+      const slashData = {
         name: slashCommand.name,
-        name_localizations: slashCommand.name_localizations ? slashCommand.name_localizations : null,
         description: slashCommand.description,
-        description_localizations: slashCommand.description_localizations ? slashCommand.description_localizations : null,
         type: slashCommand.type,
         options: slashCommand.options ? slashCommand.options : null,
         default_member_permissions: slashCommand.default_member_permissions
@@ -41,7 +38,18 @@ module.exports = (client) => {
               slashCommand.default_member_permissions
             ).toString()
           : null,
-      });
+      };
+
+      if(!(slashCommand.name_localizations == null || Object.keys(slashCommand.name_localizations).length === 0))
+      {
+        slashData.name_localizations = new Map(Object.entries(slashCommand.name_localizations));
+      }
+      if(!(slashCommand.description_localizations == null || Object.keys(slashCommand.description_localizations).length === 0))
+      {
+        slashData.description_localizations = new Map(Object.entries(slashCommand.description_localizations));
+      }
+
+      data.push(slashData);
       count++;
     }
   });
