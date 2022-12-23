@@ -39,7 +39,7 @@ function loadPlatforms(client) {
 
 module.exports = {    
 
-    AggregatedSearchSuggestions: async function(client, query, requester)
+    AggregatedSearch: async function(client, query, requester, returnErelaTracks)
     {
         const sortCriteria = [
             "author", //ASC   //DESC = "~name"
@@ -47,6 +47,7 @@ module.exports = {
         ]
 
         if(isUrl(query)) {
+            if(returnErelaTracks === true) return [client.manager.search(query, requester), [null]];
             const result = await client.manager.search(query, requester);
             const searchSuggestions = result.tracks.slice(0, 5);
             return result.loadType === "TRACK_LOADED" || "SEARCH_RESULT" ? searchSuggestions.map(track => ({
@@ -63,6 +64,7 @@ module.exports = {
             searchTasks.push(client.manager.search(searchQuery, requester));
         });
 
+        if(returnErelaTracks === true) return [Promise.all(searchTasks), searchPlatforms];
         const searchResults = await Promise.all(searchTasks);
         let searchSuggestions = [];
 
@@ -84,5 +86,13 @@ module.exports = {
         // Workaround: SoundCloud and its excessively long URL is breaking AutoComplete
         return searchSuggestions.length > 0 ? searchSuggestions.filter(item => item.value.length < 100) : false;
 
+    },
+
+    AggregatedSearchSuggestions: async function(client, query, requester) {
+        return module.exports.AggregatedSearch(client, query, requester, false);
+    },
+
+    AggregatedSearchResults: async function(client, query, requester) {
+        return module.exports.AggregatedSearch(client, query, requester, true);
     }
 }

@@ -293,5 +293,9 @@
 
 
     "URL_QUERY_YOUTUBE": "https://www.youtube.com/results?search_query=%s",
-    "URL_QUERY_YOUTUBE MUSIC": "https://music.youtube.com/search?q=%s"
+    "URL_QUERY_YOUTUBE MUSIC": "https://music.youtube.com/search?q=%s",
+
+    "YOUTUBE": "YouTube",
+    "YOUTUBE MUSIC": "YouTube Music",
+    "SOUNDCLOUD": "Soundcloud"
 }
